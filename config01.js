@@ -9,7 +9,7 @@ var config = {
     title: 'How walkable is NYC for people age 65+?',
     subtitle: 'Building an equitable city for senior residents.',
     byline: 'By Azury Lin, Barbara Alonso, Tanvi Sharma',
-    footer: 'Click on a area to explore senior equitability.',
+    footer: 'Hover over an area to explore its facility score.',
     chapters: [
         {
             id: 'sec-0',
@@ -24,8 +24,20 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'trc18-toppop',
+                    layer: 'nyc-neighborhood-fill',
                     opacity: 1
+                },
+                {
+                    layer: 'nyc-neighborhood-stroke',
+                    opacity: 1
+                },
+                {
+                    layer: 'eq-score-stroke',
+                    opacity: 0
+                },
+                {
+                    layer: 'final-senior-pop',
+                    opacity: 0
                 },
                 {
                     layer: 'fac-eats-aa29x1',
@@ -38,7 +50,11 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    layer: 'trc18-toppop',
+                    layer: 'nyc-neighborhood-fill',
+                    opacity: 0
+                },
+                {
+                    layer: 'nyc-neighborhood-stroke',
                     opacity: 0
                 }
             ]
@@ -56,7 +72,7 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'trc18-spop-2step',
+                    layer: 'final-senior-pop',
                     opacity: 1
                 }
             ],
@@ -110,6 +126,10 @@ var config = {
                 {
                     layer: 'trc18-windsoroak',
                     opacity: 1
+                },
+                {
+                    layer: 'final-senior-pop',
+                    opacity: .3
                 }
             ],
             onChapterExit: [
@@ -179,7 +199,7 @@ var config = {
             id: 'sec-5-method',
             title: 'Our methodology of equitability analysis',
             // image: '',
-            description: 'We base our analysis on a combination of both Clarence Perry’s principle and Yang and Diez-Roux’s research to help us evaluate the equitability of an area where residents age 65 highly concentrate. First, we highlight the areas with above mean senior population. Second, highlight available facilities within these areas. Third, multiply the amount of facilities by the walkscore.',
+            description: 'We base our analysis on a combination of both Clarence Perry’s principle and Yang and Diez-Roux’s research to help us evaluate the equitability of an area where residents age 65 highly concentrate. First, we highlight the areas with above mean senior population. Second, highlight available facilities within these areas. Third, multiply the amount of facilities by the walkscore to attain final facility score.',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
@@ -191,12 +211,18 @@ var config = {
                 //     layer: 'fac-foodmarts-dh5806',
                 //     opacity: 0
                 // }
-                // {
-                //     layer: 'eqscore_heatmap',
-                //     opacity: 1
-                // }
+                {
+                    layer: 'eq-score',
+                    opacity: 1
+                },
+                {
+                    layer: 'final-senior-pop',
+                    opacity: 0
+                }
             ],
-            onChapterExit: []
+            onChapterExit: [
+                
+            ]
         },
         {
             id: 'sec-6-closure',
@@ -210,9 +236,10 @@ var config = {
                 bearing: -10
             },
             onChapterEnter: [
-                //{
-                    
-               // }
+                {
+                    layer: 'eq-score-stroke',
+                    opacity: 0.8
+               }
             ],
             onChapterExit: [
                 // {

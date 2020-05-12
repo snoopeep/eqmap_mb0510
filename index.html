@@ -260,27 +260,26 @@ map.on("load", function() {
             chapter.onChapterExit.forEach(setLayerOpacity);
         }
     })
+});
 
+
+// map.on('mousemove', function(e) {
+//     var censustracts = map.queryRenderedFeatures(e.point, {
+//         layers: ['eq-score-stroke']
+//     });
+
+//     console.log(censustracts[0])
+
+//     if (censustracts.length > 0) {
+//         document.getElementById('sec-6-closure').innerHTML = '<p><strong>' + censustracts[0].properties.Pop_65Over + '</strong> people</p>';
+//     } 
     
+//     else {
+//         document.getElementById('sec-6-closure').innerHTML = '<p>Hover over an area.</p>';
+//     }
+// });
 
-    });
-
-
-    map.on('mousemove', function(e) {
-                var censustracts = map.queryRenderedFeatures(e.point, {
-                    layers: ['trc18-spop-2step']
-                });
-
-console.log(censustracts[0])
-
-                if (censustracts.length > 0) {
-                    document.getElementById('sec-6-closure').innerHTML = '<p><strong>' + censustracts[0].properties.Pop_65Over + '</strong> people</p>';
-                } else {
-                    document.getElementById('sec-6-closure').innerHTML = '<p>Hover over a state!</p>';
-                }
-            });
-
-            map.getCanvas().style.cursor = 'default';
+    // map.getCanvas().style.cursor = 'default';
 
 
 // setup resize event
