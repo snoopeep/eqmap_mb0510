@@ -6,7 +6,7 @@ var config = {
     showMarkers: false,
     theme: 'light',
     alignment: 'right',
-    title: 'How walkable is NYC for people age 65+?',
+    title: 'Senior Amenity Acess in New York City',
     subtitle: 'Building an equitable city for senior residents.',
     byline: 'By Azury Lin, Barbara Alonso, Tanvi Sharma',
     footer: 'Hover over an area to explore its facility score.',
