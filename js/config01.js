@@ -13,9 +13,9 @@ var config = {
     chapters: [
         {
             id: 'sec-0',
-            title: 'There is a growing desire of aging in place.',
+            title: 'There is a growing desire for aging in place.',
             image: './img/seniorwalk.jpg',
-            description: 'In a 2018 survey done by AARP shows, over 70% of boomers prefer aging in place and residing at where they are instead of moving to a senior facility, more than half of the Americans over 50 desire living within one mile of daily resources.',
+            description: 'A 2018 survey, done by AARP, shows over 70% of boomers prefer aging in place and residing where they are instead of moving to a senior facility. Additionally, more than half of the Americans over 50 desire living within one mile of daily resources.',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
@@ -61,9 +61,9 @@ var config = {
         },
         {
             id: 'sec-1',
-            title: 'These are areas where senior population above the average.',
+            title: 'These are areas where the number of seniors is greater than the median senior population per census tract.',
             image: '',
-            description: 'We are curious whether the areas in New York City where the most seniors currently reside are well equipped with amenities planned for their needs, consider there is a long history that urban neighborhoods are mostly planned for the needs of typical residents.',
+            description: 'We are curious whether the areas in New York City where the most seniors currently reside are well equipped with amenities for their needs. Consider, there is a long history of urban neighborhoods being primarily planned for the needs of typical residents.',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
@@ -85,9 +85,9 @@ var config = {
         },
         {
             id: 'sec-2',
-            title: 'Are people age 65+ sharing similar access to facilities across the city?',
+            title: 'Are people over 65 sharing similar levels of access to facilities across the city?',
             // image: '',
-            description: 'Convenient transit network and proximity to cultural programs in Manhattan has made New York City one of the most favorable place for senior retirement. However, in our study, we found out that areas with significant amount of residents age over 65, such as Staten Island, East Queens and Brooklyn, are short on essential amenities such as foodmarts and restaurants within walkable distances.',
+            description: 'Convenient transit network and proximity to cultural programs in Manhattan has made New York City one of the most favorable places for senior retirement. However, in our study, we found that areas with significant numbers of residents over 65, such as Staten Island, East Queens, and Brooklyn, are short on essential amenities such as foodmarts and restaurants within walkable distances.',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
@@ -113,9 +113,9 @@ var config = {
         },
         {
             id: 'sec-3-example',
-            title: 'Not every senior who lives in New York City is sharing the same convenience as one who lives in Manhattan.',
+            title: 'Not every senior who lives in New York City shares the same convenience as one who lives in Manhattan.',
             // image: '',
-            description: 'Let\'\s take a look at an area with high density of people age 65+. A senior who lives in Windsor Oak will have no access to food market within walking distance.',
+            description: 'Let\'\s take a look at one area with a higher than median number of seniors. A senior who lives in Windsor Oak will have no access to food markets within walking distance.',
             location: {
                 center: [-73.73194, 40.75325],
                 zoom: 12.62,
@@ -143,7 +143,7 @@ var config = {
             id: 'sec-4-example',
             title: '',
             // image: '',
-            description: 'And seniors who live around Howard Beach might have a hard time finding foodmarts within short walking distances.',
+            description: 'Seniors who live around Howard Beach might also have a hard time finding foodmarts within short walking distances.',
             location: {
                 center: [-73.83288, 40.65608],
                 zoom: 13.62,
@@ -197,9 +197,9 @@ var config = {
         // },
         {
             id: 'sec-5-method',
-            title: 'Our methodology of equitability analysis',
+            title: 'Our methodology of accessibility analysis',
             // image: '',
-            description: 'We base our analysis on a combination of both Clarence Perry’s principle and Yang and Diez-Roux’s research to help us evaluate the equitability of an area where residents age 65 highly concentrate. First, we highlight the areas with above mean senior population. Second, highlight available facilities within these areas. Third, multiply the amount of facilities by the walkscore to attain final facility score.',
+            description: 'We base our analysis on a combination of Clarence Perry’s principle and Yang and Diez-Roux’s research, to help us evaluate the accessibility of key amenities in areas with high numbers of seniors. First, we highlight the census tracts where the number of people over the age of 65 is above median. Ie, the median number of seniors over 65 per census tract in NYC is 443 and the highlighted tracts are home to more than 443 seniors per tract. Second, we highlight available facilities within these areas. These facilities represent the daily or weekly needs of seniors. Third, score each census trat as a function of the number of facilities, area of the tract, and the WalkScore.',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
@@ -226,9 +226,9 @@ var config = {
         },
         {
             id: 'sec-6-closure',
-            title: 'How can we address walkability and equitability for seniors?',
+            title: 'How can we address amenity accessibility for seniors?',
             // image: '',
-            description: 'We hope this map will help urban planners and policy makers identify the needs for development and to attract the attention of community programs and business owners by showing where the mass opportunities and profits are.'+'\n'+'Click on a area to explore the walkability and the availability of facilities.',
+            description: 'We hope this map will help urban planners and policy makers identify the needs for development and to attract the attention of community programs and business owners by showing where the demand and opportunities are.'+'\n'+'Click on a census tract to explore the walkability and the availability of facilities.',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
