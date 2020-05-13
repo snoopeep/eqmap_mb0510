@@ -66,7 +66,7 @@ var config = {
         },
         {
             id: 'sec-1',
-            title: 'These are areas where the number of seniors is greater than 443 people – the median senior population per census tract.',
+            title: 'These are areas where the number of seniors is greater than 443 people – the median senior population – per census tract.',
             // image: '',
             description: 'We are curious whether the areas in New York City where the most seniors currently reside are well equipped with amenities for their needs. Consider, there is a long history of urban neighborhoods being primarily planned for the needs of typical residents.',
             location: {
@@ -217,7 +217,7 @@ var config = {
             id: 'sec-5-method',
             title: 'Our methodology of accessibility analysis',
             // image: '',
-            description: 'We base our analysis on a combination of Clarence Perry’s principle and Yang and Diez-Roux’s research, to help us evaluate the accessibility of key amenities in areas with high numbers of seniors. <br><br>First, we highlight the census tracts where the number of people over the age of 65 is above median. Ie, the median number of seniors over 65 per census tract in NYC is 443 and the highlighted tracts are home to more than 443 seniors per tract. <br><br>Second, we highlight <b class=keywords>available facilities</b> within these areas. These facilities represent the daily or weekly needs of seniors. <br><br>Third, score each census tract as a function of the <b class=keywords>number of facilities, area of the tract, and the WalkScore.</b>',
+            description: 'We base our analysis on a combination of Clarence Perry’s principle and Yang and Diez-Roux’s research, to help us evaluate the accessibility of key amenities in areas with high numbers of seniors. <br><br>First, we highlight the census tracts where the number of people over the age of 65 is above median. Ie, the median number of seniors over 65 per census tract in NYC is 443 and the highlighted tracts are home to more than 443 seniors per tract. <br><br>Second, we highlight <b class=keywords>available facilities</b> within these areas. These facilities represent the daily or weekly needs of seniors. <br><br>Third, score each census tract as a function of the <b class=keywords>number of facilities, area of the tract, and the WalkScore.</b><br><br><small>Amenity Access Score Index<br>Poor <b class=scorekey> ––––– </b> High</small>',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
@@ -250,7 +250,7 @@ var config = {
             id: 'sec-6-closure',
             title: 'How can we address amenity accessibility for seniors?',
             // image: '',
-            description: 'We hope this map will help <b class=keywords>urban planners</b> and <b class=keywords>policy makers</b> identify the needs for development and to <b class=keywords>attract the attention of community programs</b> and <b class=keywords>business owners</b> by showing where the demand and opportunities are. <br><br><br><a href="https://snoopeep.github.io/eqmap_mbinteractive/">Explore the Map</a>',
+            description: 'We hope this map will help <b class=keywords>urban planners</b></br> and <b class=keywords>policy makers</b> identify the needs for development and to <b class=keywords>attract the attention of community programs</b> and <b class=keywords>business owners</b> by showing where the demand and opportunities are. <br><br><br><a href="https://snoopeep.github.io/eqmap_mbinteractive/">Explore the Map</a>',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
