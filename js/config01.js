@@ -8,7 +8,7 @@ var config = {
     alignment: 'right',
     title: 'Senior Amenity Acess in New York City',
     subtitle: 'Building an equitable city for senior residents.',
-    byline: 'By Azury Lin, Barbara Alonso, Tanvi Sharma',
+    byline: 'By Azury Lin, Barbara Alonso Cabrero, Tanvi Sharma',
     footer: '',
     chapters: [
         {
