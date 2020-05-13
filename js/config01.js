@@ -17,8 +17,9 @@ var config = {
             image: './img/seniorwalk.jpg',
             description: 'A 2018 survey, done by AARP, shows over 70% of boomers prefer aging in place and residing where they are instead of moving to a senior facility. Additionally, more than half of the Americans over 50 desire living within one mile of daily resources.',
             location: {
-                center: [-73.73194, 40.78607],
-                zoom: 9.8,
+                center: [ -73.83776, 40.76092],
+                // center: [-73.73194, 40.78607],
+                zoom: 10,
                 pitch: 0,
                 bearing: -10
             },
@@ -65,7 +66,7 @@ var config = {
         },
         {
             id: 'sec-1',
-            title: 'These are areas where the number of seniors is greater than the median senior population per census tract.',
+            title: 'These are areas where the number of seniors is greater than 443 people – the median senior population per census tract.',
             // image: '',
             description: 'We are curious whether the areas in New York City where the most seniors currently reside are well equipped with amenities for their needs. Consider, there is a long history of urban neighborhoods being primarily planned for the needs of typical residents.',
             location: {
@@ -91,7 +92,7 @@ var config = {
             id: 'sec-2',
             title: 'Are people over 65 sharing similar levels of access to facilities across the city?',
             // image: '',
-            description: 'Convenient transit network and proximity to cultural programs in Manhattan has made New York City one of the most favorable places for senior retirement. However, in our study, we found that areas with significant numbers of residents over 65, such as Staten Island, East Queens, and Brooklyn, are short on essential amenities such as foodmarts and restaurants within walkable distances.',
+            description: 'Convenient transit network and proximity to cultural programs in Manhattan has made New York City one of the most favorable places for senior retirement. <br><br>However, in our study, we found that areas with significant numbers of residents age over 65, such as <b>Staten Island, East Queens, and South Brooklyn</b>, are short on essential amenities such as <b id=foodmarts>foodmarts</b> and <b id=eats>restaurants</b> within walkable distances.',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
@@ -123,7 +124,7 @@ var config = {
             id: 'sec-3-example',
             title: 'Not every senior who lives in New York City shares the same convenience as one who lives in Manhattan.',
             // image: '',
-            description: 'Let\'\s take a look at one area with a higher than median number of seniors. A senior who lives in Windsor Oak will have no access to food markets within walking distance.',
+            description: 'Let\'\s take a look at one area with a higher than median number of seniors. A senior who lives in <b class=keywords>Windsor Oak</b> will have no access to food markets within walking distance.',
             location: {
                 center: [-73.73194, 40.75325],
                 zoom: 12.62,
@@ -152,7 +153,7 @@ var config = {
             id: 'sec-4-example',
             title: '',
             // image: '',
-            description: 'Seniors who live around Howard Beach might also have a hard time finding foodmarts within short walking distances.',
+            description: 'Seniors who live around <b class=keywords>Howard Beach</b> might also have a hard time finding foodmarts within short walking distances.',
             location: {
                 center: [-73.83288, 40.65608],
                 zoom: 13.62,
@@ -216,7 +217,7 @@ var config = {
             id: 'sec-5-method',
             title: 'Our methodology of accessibility analysis',
             // image: '',
-            description: 'We base our analysis on a combination of Clarence Perry’s principle and Yang and Diez-Roux’s research, to help us evaluate the accessibility of key amenities in areas with high numbers of seniors. <br><br>First, we highlight the census tracts where the number of people over the age of 65 is above median. Ie, the median number of seniors over 65 per census tract in NYC is 443 and the highlighted tracts are home to more than 443 seniors per tract. <br><br>Second, we highlight available facilities within these areas. These facilities represent the daily or weekly needs of seniors. <br><br>Third, score each census trat as a function of the number of facilities, area of the tract, and the WalkScore.',
+            description: 'We base our analysis on a combination of Clarence Perry’s principle and Yang and Diez-Roux’s research, to help us evaluate the accessibility of key amenities in areas with high numbers of seniors. <br><br>First, we highlight the census tracts where the number of people over the age of 65 is above median. Ie, the median number of seniors over 65 per census tract in NYC is 443 and the highlighted tracts are home to more than 443 seniors per tract. <br><br>Second, we highlight <b class=keywords>available facilities</b> within these areas. These facilities represent the daily or weekly needs of seniors. <br><br>Third, score each census tract as a function of the <b class=keywords>number of facilities, area of the tract, and the WalkScore.</b>',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
@@ -249,7 +250,7 @@ var config = {
             id: 'sec-6-closure',
             title: 'How can we address amenity accessibility for seniors?',
             // image: '',
-            description: 'We hope this map will help urban planners and policy makers identify the needs for development and to attract the attention of community programs and business owners by showing where the demand and opportunities are. <br><br><br><a href="https://snoopeep.github.io/eqmap_mbinteractive/">Explore the Map</a>',
+            description: 'We hope this map will help <b class=keywords>urban planners</b> and <b class=keywords>policy makers</b> identify the needs for development and to <b class=keywords>attract the attention of community programs</b> and <b class=keywords>business owners</b> by showing where the demand and opportunities are. <br><br><br><a href="https://snoopeep.github.io/eqmap_mbinteractive/">Explore the Map</a>',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
