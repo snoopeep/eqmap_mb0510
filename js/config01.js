@@ -9,7 +9,7 @@ var config = {
     title: 'Senior Amenity Acess in New York City',
     subtitle: 'Building an equitable city for senior residents.',
     byline: 'By Azury Lin, Barbara Alonso, Tanvi Sharma',
-    footer: 'Check out the interactive map',
+    footer: '',
     chapters: [
         {
             id: 'sec-0',
@@ -25,7 +25,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'nyc-neighborhood-fill',
-                    opacity: 1
+                    opacity: .6
                 },
                 {
                     layer: 'nyc-neighborhood-stroke',
@@ -33,6 +33,10 @@ var config = {
                 },
                 {
                     layer: 'eq-score-stroke',
+                    opacity: 0
+                },
+                {
+                    layer: 'eq-score',
                     opacity: 0
                 },
                 {
@@ -62,7 +66,7 @@ var config = {
         {
             id: 'sec-1',
             title: 'These are areas where the number of seniors is greater than the median senior population per census tract.',
-            image: '',
+            // image: '',
             description: 'We are curious whether the areas in New York City where the most seniors currently reside are well equipped with amenities for their needs. Consider, there is a long history of urban neighborhoods being primarily planned for the needs of typical residents.',
             location: {
                 center: [-73.73194, 40.78607],
@@ -73,7 +77,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'final-senior-pop',
-                    opacity: 1
+                    opacity: .9
                 }
             ],
             onChapterExit: [
@@ -102,6 +106,10 @@ var config = {
                 {
                     layer: 'fac-eats-aa29x1',
                     opacity: 1
+                },
+                {
+                    layer: 'final-senior-pop',
+                    opacity: 0.9
                 }
             ],
             onChapterExit: [
@@ -137,7 +145,8 @@ var config = {
                     layer: 'trc18-windsoroak',
                     opacity: 0
                 }
-            ]
+            ],
+            button: 'Explore interactive map'
         },
         {
             id: 'sec-4-example',
@@ -154,6 +163,14 @@ var config = {
                 {
                     layer: ('trc18-Howardbeach'),
                     opacity: 1
+                },
+                {
+                    layer: 'eq-score-stroke',
+                    opacity: 0
+                },
+                {
+                    layer: 'eq-score',
+                    opacity: 0
                 }
             ],
             onChapterExit: [
@@ -199,7 +216,7 @@ var config = {
             id: 'sec-5-method',
             title: 'Our methodology of accessibility analysis',
             // image: '',
-            description: 'We base our analysis on a combination of Clarence Perry’s principle and Yang and Diez-Roux’s research, to help us evaluate the accessibility of key amenities in areas with high numbers of seniors. First, we highlight the census tracts where the number of people over the age of 65 is above median. Ie, the median number of seniors over 65 per census tract in NYC is 443 and the highlighted tracts are home to more than 443 seniors per tract. Second, we highlight available facilities within these areas. These facilities represent the daily or weekly needs of seniors. Third, score each census trat as a function of the number of facilities, area of the tract, and the WalkScore.',
+            description: 'We base our analysis on a combination of Clarence Perry’s principle and Yang and Diez-Roux’s research, to help us evaluate the accessibility of key amenities in areas with high numbers of seniors. <br><br>First, we highlight the census tracts where the number of people over the age of 65 is above median. Ie, the median number of seniors over 65 per census tract in NYC is 443 and the highlighted tracts are home to more than 443 seniors per tract. <br><br>Second, we highlight available facilities within these areas. These facilities represent the daily or weekly needs of seniors. <br><br>Third, score each census trat as a function of the number of facilities, area of the tract, and the WalkScore.',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
@@ -210,10 +227,14 @@ var config = {
                 // {
                 //     layer: 'fac-foodmarts-dh5806',
                 //     opacity: 0
-                // }
+                // },
                 {
                     layer: 'eq-score',
                     opacity: 1
+                },
+                {
+                    layer: 'eq-score-stroke',
+                    opacity: 0
                 },
                 {
                     layer: 'final-senior-pop',
@@ -228,7 +249,7 @@ var config = {
             id: 'sec-6-closure',
             title: 'How can we address amenity accessibility for seniors?',
             // image: '',
-            description: 'We hope this map will help urban planners and policy makers identify the needs for development and to attract the attention of community programs and business owners by showing where the demand and opportunities are.'+'\n'+'Click on a census tract to explore the walkability and the availability of facilities.',
+            description: 'We hope this map will help urban planners and policy makers identify the needs for development and to attract the attention of community programs and business owners by showing where the demand and opportunities are. <br><br><br><a href="interactivemap.html">Explore the Map</a>',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
@@ -242,10 +263,14 @@ var config = {
                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'trc18-spop-2step',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'eq-score-stroke',
+                    opacity: 0
+                },
+                {
+                    layer: 'eq-score',
+                    opacity: 0
+                }
             ]
         }
     ]

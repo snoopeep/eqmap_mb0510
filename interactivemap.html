@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Equitable City for Seniors</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Palanquin:wght@300;500;700&display=swap" rel="stylesheet">
+
+
+    <style>
+    	
+    	body {
+		 	margin: 0;
+		 	padding: 0;
+			font-family: 'Palanquin', sans-serif;
+		}
+
+		h1 {
+			font-size: 25px;
+			text-align: center;
+			margin: 0px;
+		}
+
+		h2 {
+		  	font-size: 10px;
+		  	text-align: center;
+		  	letter-spacing: 3px;
+		  	color: #666666;
+		  	margin: 5px;
+		  	text-transform: uppercase;
+		}
+
+		h3 {
+		  	font-size: 18px;
+		  	text-align: center;
+		  	margin: 0px;
+
+		}
+
+		p {
+		  	font-size: 11px;
+		  	font-weight: bold;
+		  	text-align: center;
+		  	color: #767676;
+		  	margin: 0px;
+		}
+
+		#map {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  width: 100%;
+		}
+
+		.map-overlay {
+			position: absolute;
+			right: 0;
+			background: rgba(255, 255, 255, 0.93);
+			font-family: Arial, sans-serif;
+			overflow: auto;
+			border-radius: 3px;
+			margin: 32px;
+			padding: 24px;
+		}
+
+		#features {
+		 	top: 0;
+		  	height: 690px;
+		  	width: 25vw;
+		}
+
+		#legend {
+			position: absolute;
+			font-family: Arial, sans-serif;
+			font-size: 12px;
+			padding: 10px;
+			border-radius: 3px;
+			background: rgba(255, 255, 255, 0.93);
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+			line-height: 18px;
+			height: 180px;
+			width: 140px;
+			margin-top: 40px;
+			margin-left: 40px;
+		}
+
+		.legend-key {
+			display: inline-block;
+			border-radius: 3px;
+			width: 10px;
+			height: 10px;
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+
+		.grid-score-pop {
+  			display: grid;
+  			grid-template-columns: auto auto;
+  			grid-gap: 10px;
+ 			padding: 20px;
+		}
+
+		.grid-fac {
+  			display: grid;
+  			grid-template-columns: auto auto auto auto auto;
+  			grid-gap: 10px;
+ 			padding: 10px;
+
+ 		}
+
+		.div{
+			margin-top: 28px;
+			margin-bottom: 16px;
+		}
+
+		.icon{ 
+			width: 32px;
+			height: 32px;
+			margin-left: 45%;
+		}
+
+		.nodata{}
+
+    </style>
+
+</head>
+
+<body>
+    <div id='map'></div>
+    <div id='legend'></div>
+	<div class='map-overlay' id='features'>
+		<h1 style = "margin-top: 12px">Senior amenity access in NYC</h1>
+
+		<div class="div">
+			<h2  id='boro' class='nodata'>BOROUGH</h2>
+			<h3 id='neighborhood' class='nodata'>Click on a census tract!</h3>
+		</div>
+
+		<div class="div">
+			<img src="img/icon-sco.png" class= 'icon'>
+			<h2>SCORING</h2>
+
+			<div style="margin-top: 10px">
+				<h1 id='access_score' class='nodata'>-</h1>
+				<p>Amenity Access Score</p>
+			</div>
+						
+			<div class="grid-score-pop">
+			  <div>
+			  	<h3 id='walk_score' class='nodata'>-</h3>
+				<p>Walk Score</p>
+			  </div>
+			  
+			  <div>
+			  	<h3 id='fac_score' class='nodata'>-</h3>
+				<p>Amenity Score</p>
+			  </div>
+
+			</div>
+
+		</div>
+
+		<div class="div">
+			<img src="img/icon-pop.png" class= 'icon'>
+			<h2>POPULATION</h2>
+
+			<div class="grid-score-pop">
+			  <div>
+			  	<h3 id='n_res' class='nodata'>-</h3>
+				<p>Total N. residents</p>
+			  </div>
+			  
+			  <div>
+			  	<h3 id='n_senior' class='nodata'>-</h3>
+				<p>N. seniors>65</p>
+			  </div>
+
+			</div>
+
+		</div>
+
+		<div class="div">
+			<img src="img/icon-fac.png" class= 'icon'>
+			<h2>AMENITIES</h2>
+
+			<div class="grid-fac">
+			  	<div>
+			  		<h3 id='fac_art' class='nodata'>-</h3>
+					<p>Arts & entertainment</p>
+			  	</div>
+			  
+			  	<div>
+			  		<h3 id='fac_bank' class='nodata'>-</h3>
+					<p>Banks</p>
+			 	 </div>
+
+				<div>
+			  		<h3 id='fac_eat' class='nodata'>-</h3>
+					<p>Restaurants</p>
+			  	</div>
+
+			  	<div>
+			  		<h3 id='fac_mkt' class='nodata'>-</h3>
+					<p>Groceries</p>
+			  	</div>
+
+			  	<div>
+			  		<h3 id='fac_lib' class='nodata'>-</h3>
+					<p>Libraries</p>
+			  	</div>
+
+			  	<div>
+			  		<h3 id='fac_med' class='nodata'>-</h3>
+					<p>Medical centers</p>
+			  	</div>
+
+			  	<div>
+			  		<h3 id='fac_park' class='nodata'>-</h3>
+					<p>Parks</p>
+			  	</div>
+
+			  	<div>
+			  		<h3 id='fac_pharma' class='nodata'>-</h3>
+					<p>Pharmacies</p>
+			  	</div>
+
+			  	<div>
+			  		<h3 id='fac_poff' class='nodata'>-</h3>
+					<p>Post offices</p>
+			  	</div>
+
+			  	<div>
+			  		<h3 id='fac_salon' class='nodata'>-</h3>
+					<p>Hair salons</p>
+			  	</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	<script>
+		mapboxgl.accessToken = 'pk.eyJ1IjoidmVyb25pYTA4MjQiLCJhIjoiY2ozNzdxbDBlMDAzMjJ3bXBiNWl1N2lsbCJ9.YGHpnvqbrPYoNRaRFehv3g';
+
+		var map = new mapboxgl.Map({
+  			container: 'map',
+  			style: 'mapbox://styles/veronia0824/cka19wfbc1x1r1inqlmfpqfm5',
+  			center: [-73.813118, 40.700611],
+			zoom: 9.95
+		});
+
+		map.on('load', function() {
+		
+			var layers = ['Arts & entertainment', 'Banks', 'Restaurants', 'Groceries', 'Libraries', 'Medical centers', 'Parks', 'Pharmacies', 'Post offices', 'Hair salons'];
+			var colors = ['#ac78e8', '#8ab8ef', '#f9b177', '#f56192', '#ef89fb', '#4b5be7', '#209d5c', '#32cffb', '#3b84de', '#acf2dc'];
+	  		
+			for (i = 0; i < layers.length; i++) {
+			  var layer = layers[i];
+			  var color = colors[i];
+			  var item = document.createElement('div');
+			  var key = document.createElement('span');
+			  key.className = 'legend-key';
+			  key.style.backgroundColor = color;
+
+			  var value = document.createElement('span');
+			  value.innerHTML = layer;
+			  item.appendChild(key);
+			  item.appendChild(value);
+			  legend.appendChild(item);
+			}
+			
+			map.on('click', function(e) {
+
+	  			var censustracts = map.queryRenderedFeatures(e.point, {
+	     			layers: ['final-eqscore']
+	  			});
+
+	  			if (censustracts.length > 0) {
+	  				document.getElementById('boro').innerHTML = censustracts[0].properties.boro_name;
+	  				document.getElementById('neighborhood').innerHTML = censustracts[0].properties.ntaname;
+
+	  				document.getElementById('access_score').innerHTML = censustracts[0].properties.eq_score_i;
+	  				document.getElementById('walk_score').innerHTML = censustracts[0].properties.walk_score;
+	  				document.getElementById('fac_score').innerHTML = censustracts[0].properties.fac_score_;
+
+	  				document.getElementById('n_res').innerHTML = censustracts[0].properties.Tot_Pop;
+					document.getElementById('n_senior').innerHTML = censustracts[0].properties.Pop_65Over;
+
+	    			document.getElementById('fac_art').innerHTML = censustracts[0].properties.artent_csv;
+	    			document.getElementById('fac_bank').innerHTML = censustracts[0].properties.banks_csv_;
+	    			document.getElementById('fac_eat').innerHTML = censustracts[0].properties.eats_csv_c;
+	    			document.getElementById('fac_mkt').innerHTML = censustracts[0].properties.foodmkts_c;
+	    			document.getElementById('fac_lib').innerHTML = censustracts[0].properties.libraries_;
+	    			document.getElementById('fac_med').innerHTML = censustracts[0].properties.medical_cs;
+	    			document.getElementById('fac_park').innerHTML = censustracts[0].properties.parks_csv_;
+	    			document.getElementById('fac_pharma').innerHTML = censustracts[0].properties.pharmacy_c;
+	    			document.getElementById('fac_poff').innerHTML = censustracts[0].properties.postoff_cs;
+	    			document.getElementById('fac_salon').innerHTML = censustracts[0].properties.salon_csv_;
+
+	  			} else {
+	    			document.getElementById('boro').innerHTML = "-";
+	  				document.getElementById('neighborhood').innerHTML = "Click on a census tract!";
+
+	  				document.getElementById('access_score').innerHTML = "-";
+	  				document.getElementById('walk_score').innerHTML = "-";
+	  				document.getElementById('fac_score').innerHTML = "-";
+
+	  				document.getElementById('n_res').innerHTML = "-";
+					document.getElementById('n_senior').innerHTML = "-";
+
+	    			document.getElementById('fac_art').innerHTML = "-";
+	    			document.getElementById('fac_bank').innerHTML = "-";
+	    			document.getElementById('fac_eat').innerHTML = "-";
+	    			document.getElementById('fac_mkt').innerHTML = "-";
+	    			document.getElementById('fac_lib').innerHTML = "-";
+	    			document.getElementById('fac_med').innerHTML = "-";
+	    			document.getElementById('fac_park').innerHTML = "-";
+	    			document.getElementById('fac_pharma').innerHTML = "-";
+	    			document.getElementById('fac_poff').innerHTML = "-";
+	    			document.getElementById('fac_salon').innerHTML = "-";
+	  			}
+				
+				map.flyTo({center: e.lngLat.wrap(), zoom:14});
+
+				});
+	  	});
+
+	map.getCanvas().style.cursor = 'pointer';
+
+	// var bounds = [
+	// 	[-74.24254, 40.68392], // [west, south]
+	// 	[-73.91058, 40.87764]  // [east, north]
+	// ];
+	// // Set the map's max bounds.
+	// map.setMaxBounds(bounds);
+
+	</script>
+	</body>
