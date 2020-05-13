@@ -249,7 +249,7 @@ var config = {
             id: 'sec-6-closure',
             title: 'How can we address amenity accessibility for seniors?',
             // image: '',
-            description: 'We hope this map will help urban planners and policy makers identify the needs for development and to attract the attention of community programs and business owners by showing where the demand and opportunities are. <br><br><br><a href="interactivemap.html">Explore the Map</a>',
+            description: 'We hope this map will help urban planners and policy makers identify the needs for development and to attract the attention of community programs and business owners by showing where the demand and opportunities are. <br><br><br><a href="./html/interactivemap.html">Explore the Map</a>',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
