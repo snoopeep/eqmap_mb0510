@@ -15,7 +15,7 @@ var config = {
             id: 'sec-0',
             title: 'There is a growing desire for aging in place.',
             image: './img/seniorwalk.jpg',
-            description: 'A 2018 survey by AARP shows that over 70% of boomers prefer aging in place, meaning that they would rather reside where they are instead of moving to a senior facility. Additionally, more than half of the Americans over 50 desire to live within one mile of daily resources and amenities.',
+            description: 'A 2018 <a href="https://www.aarp.org/research/topics/community/info-2018/2018-home-community-preference.html">survey</a> by AARP shows that over 70% of boomers prefer aging in place, meaning that they would rather reside where they are instead of moving to a senior facility. Additionally, more than half of the Americans over 50 desire to live within one mile of daily resources and amenities.',
             location: {
                 center: [ -73.83776, 40.76092],
                 // center: [-73.73194, 40.78607],
@@ -66,7 +66,7 @@ var config = {
         },
         {
             id: 'sec-1',
-            title: 'These are the NC census tracts where the number of seniors is greater than 443 people – the median senior population.',
+            title: 'These are the NYC census tracts where the number of seniors is greater than 443 people – the median senior population.',
             // image: '',
             description: 'We are curious whether the areas in New York City where the most seniors currently reside are well equipped with amenities for their needs. Consider that there is a long history of urban neighborhoods being primarily planned for the needs of typical residents.',
             location: {
@@ -92,7 +92,7 @@ var config = {
             id: 'sec-2',
             title: 'Do people over 65 share similar levels of access to amenities across the city?',
             // image: '',
-            description: 'Convenient transit network and proximity to cultural programs in Manhattan has made New York City one of the most favorable places for senior retirement. <br><br>However, in our study, we found that areas with significant numbers of residents over 65, such as <b>Staten Island, East Queens, and South Brooklyn</b>, are short on essential amenities such as <b id=foodmarts>foodmarts</b> and <b id=eats>restaurants</b> within walkable distances.',
+            description: 'Convenient transit network and proximity to cultural programs in Manhattan has made New York City one of the most favorable places for <a href="https://www.nytimes.com/2017/06/09/business/retirement/retirement-manhattan-senior-citizens.html">senior retirement</a>. <br><br>However, in our study, we found that areas with significant numbers of residents over 65, such as <b>Staten Island, East Queens, and South Brooklyn</b>, are short on essential amenities such as <b id=foodmarts>foodmarts</b> and <b id=eats>restaurants</b> within walkable distances.',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
@@ -217,7 +217,7 @@ var config = {
             id: 'sec-5-method',
             title: 'Our methodology of accessibility analysis',
             // image: '',
-            description: 'We base our analysis on a combination of Clarence Perry’s principle and Yang and Diez-Roux’s research to help us evaluate the accessibility of key amenities in areas with high numbers of seniors. <br><br>First, we highlighted the census tracts where the number of people over the age of 65 is above the median. The median number of seniors over 65 per census tract in NYC is 443, so the highlighted tracts are home to more than 443 seniors. <br><br>Second, we highlighted <b class=keywords>available amenities</b> within these areas. These amenities represent the daily or weekly needs of seniors. <br><br>Third, we scored each census tract as a function of the <b class=keywords>number of amenities, the area of the tract, and its WalkScore.</b><br><br><small>Amenity Access Score Index<br>Poor <b class=scorekey> ––––– </b> High</small>',
+            description: 'We base our analysis on a combination of Clarence Perry’s principle and Yang and Diez-Roux’s <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3377942/">research</a> to help us evaluate the accessibility of key amenities in areas with high numbers of seniors. <br><br>First, we highlighted the census tracts where the number of people over the age of 65 is above the median. The median number of seniors over 65 per census tract in NYC is 443, so the highlighted tracts are home to more than 443 seniors. <br><br>Second, we highlighted <b class=keywords>available amenities</b> within these areas. These amenities represent the daily or weekly needs of seniors. <br><br>Third, we scored each census tract as a function of the <b class=keywords>number of amenities, the area of the tract, and its <a href="https://www.walkscore.com/methodology.shtml">WalkScore</a>.</b><br><br><small>Amenity Access Score Index<br>Poor <b class=scorekey> ––––– </b> High</small>',
             location: {
                 center: [-73.73194, 40.78607],
                 zoom: 9.8,
