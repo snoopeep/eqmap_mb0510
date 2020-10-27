@@ -14,8 +14,8 @@ var config = {
         {
             id: 'sec-0',
             title: 'There is a growing desire for aging in place.',
-            image: './img/seniorwalk.jpg',
-            description: 'A 2018 <a href="https://www.aarp.org/research/topics/community/info-2018/2018-home-community-preference.html">survey</a> by AARP shows that over 70% of boomers prefer aging in place, meaning that they would rather reside where they are instead of moving to a senior facility. Additionally, more than half of the Americans over 50 desire to live within one mile of daily resources and amenities.',
+            image: './img/older-couples-uplash.jpg',
+            description: '<small>(<span>Photo by <a href="https://unsplash.com/@mtimber71?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mark Timberlake</a> on <a href="https://unsplash.com/collections/4896282/elderly-people?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>)</small><br><br>A 2018 <a href="https://www.aarp.org/research/topics/community/info-2018/2018-home-community-preference.html">survey</a> by AARP shows that over 70% of boomers prefer aging in place, meaning that they would rather reside where they are instead of moving to a senior facility. Additionally, more than half of the Americans over 50 desire to live within one mile of daily resources and amenities.',
             location: {
                 center: [ -73.83776, 40.76092],
                 // center: [-73.73194, 40.78607],
